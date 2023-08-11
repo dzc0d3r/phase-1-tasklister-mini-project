@@ -6,12 +6,15 @@ html {
 
 body {
   min-height: 100%;
-  min-width: 100%;
-  background: linear-gradient(pink, violet);
+  background: linear-gradient(#b2bec3, #dfe6e9)
 }
 
 button {
   font-size: 7px;
+}
+
+.text-center {
+  text-align: center;
 }
 
 #main-content {
@@ -19,19 +22,277 @@ button {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-direction: column;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.3);
-  padding: 15px 20px 18px 18px;
+  padding: .8rem;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  margin: 0px .7rem;
+
 }
 
-#list {
-  margin: 10px;
+#list-container {
+  margin: .6rem;
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.75);
   padding: 15px 20px 18px 18px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
+  min-height: 15rem;
+
+}
+
+
+#list-container ul li {
+
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+
+}
+
+#list-container h2 {
+  text-align: center;
+  color: #333;
+  font-size: 2rem;
+  margin-top: 5px;
+  padding: 5px;
+}
+
+
+
+#create-task-form {
+  max-width: 420px;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
+
+#create-task-form label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+#create-task-form input[type="text"] {
+  width: 98%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#create-task-form select {
+  min-width: 102%;
+  padding: 8px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+#create-task-form input[type="submit"] {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#create-task-form input[type="submit"]:hover {
+  background-color: #0056b3;
+}
+
+/* Optional: Add more styling to your preference */
+#desc {
+  flex-grow: 2;
+}
+
+.delete-button {
+  background-color: #f44336;
+  font-size: .9rem;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+
+  width: 2rem;
+  height: 2rem;
+
+}
+
+
+.delete-button:hover {
+  background-color: #d32f2f;
+}
+
+.edit-button {
+  background-color: #16a085;
+  font-size: .9rem;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  border-radius: 50%;
+  margin-left: .3rem;
+  width: 2rem;
+  height: 2rem;
+
+}
+
+.update-button {
+  background-color: #16a085;
+  font-size: .9rem;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: .3rem;
+  width: 2rem;
+  height: 2rem;
+
+}
+
+/* Styles for priority classes */
+.high {
+  color: #e74c3c;
+}
+
+.medium {
+  color: #f39c12;
+}
+
+.low {
+  color: #16a085;
+}
+
+
+
+#sort-button {
+  background-color: #007bff;
+  font-size: 1rem;
+  color: white;
+  border: 5px;
+  border-radius: .2rem;
+  padding: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+
+}
+
+#sort-button:hover {
+  background-color: #0056b3;
+}
+
+#arrows {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+
+
+
+/* Larger screens: Side by side layout */
+@media (min-width: 768px) {
+  #main-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px;
+  }
+}
+
+/* Smaller screens: Stacked layout */
+@media (max-width: 767px) {
+  #main-content {
+    display: flex;
+    flex-direction: column;
+  }
+
+  #form-container,
+  #list-container {
+    margin-bottom: 20px;
+  }
+
+  #list-container {
+    min-width: 90%;
+    max-width: 95% !important;
+  }
+
+  #list-container ul {
+    font-size: .93rem;
+    margin-top: -5px;
+
+
+  }
+
+  #list-container ul li {
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    max-width: 100% !important;
+    word-wrap: break-word;
+    list-style: circle;
+
+  }
+
+
+
+  body {
+    background: #b2bec3;
+  }
+}
+
+
+/* Add this CSS to your style.css file */
+#editBox {
+
+  width: 80%;
+  height: 50%;
+  padding: 10px 20px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#editBox::backdrop {
+  background: rgba(108, 160, 255, 0.7);
+}
+
+#editBox input[type="text"] {
+  margin: 10px;
+  width: 95%;
+  height: 3rem;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  margin-top: 5rem;
+}
+
+
+
+#editBox button {
+
+  width: 10%;
+  margin: 0 auto;
+
+
+
+
+
+}
+
+#editBox button:hover {
+  background-color: #04e675;
 }
