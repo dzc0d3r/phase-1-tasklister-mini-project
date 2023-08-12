@@ -18,8 +18,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     if (taskDescription !== "") {
       const newTaskItem = document.createElement("li")
-      newTaskItem.innerHTML = ` <span id="desc">- Description: ${taskDescription}  | User: ${taskUser}   | Priority: ${taskPriority}</span>`
-      newTaskItem.classList.add(taskPriority)
+      const spanPriority = document.createElement("span")
+
+
+
+      newTaskItem.innerHTML = `<span id="desc">- Description: ${taskDescription}  | User: ${taskUser} `
+      spanPriority.innerHTML = `Priority : ${taskPriority}`
+      spanPriority.classList.add(`${taskPriority}`)
+      newTaskItem.appendChild(spanPriority)
+
+
+
 
       const deleteButton = document.createElement("button")
       deleteButton.textContent = "🗑"
@@ -66,20 +75,21 @@ document.addEventListener("DOMContentLoaded", () => {
     const taskItems = [...tasksList.children]
 
 
+
+
     taskItems.sort((a, b) => {
-      const priorityMap = { high: 3, medium: 2, low: 1 }
-      const priorityA = priorityMap[a.classList[0]]
-      const priorityB = priorityMap[b.classList[0]]
-      return ascendingOrder ? priorityA - priorityB : priorityB - priorityA
+      const priorityMap = { high: 3, medium: 2, low: 1 };
+      const priorityA = priorityMap[a.querySelector(".high, .medium, .low").classList[0]];
+      const priorityB = priorityMap[b.querySelector(".high, .medium, .low").classList[0]];
+
+      return ascendingOrder ? priorityA - priorityB : priorityB - priorityA;
     });
-
-
 
     tasksList.innerHTML = "";
     taskItems.forEach((item) => {
-      tasksList.appendChild(item)
+      tasksList.appendChild(item);
     });
 
-    ascendingOrder = !ascendingOrder
+    ascendingOrder = !ascendingOrder;
   });
 });

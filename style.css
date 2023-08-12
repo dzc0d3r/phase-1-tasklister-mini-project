@@ -32,14 +32,14 @@ button {
 }
 
 #list-container {
-  margin: .6rem;
+
   border: 1px solid #333;
   background: rgba(255, 255, 255, 0.75);
   padding: 15px 20px 18px 18px;
   border-radius: 5px;
   box-shadow: 2px 5px 5px #333;
-  min-height: 15rem;
-
+  min-height: 25rem;
+  margin-left: -87px
 }
 
 
@@ -63,12 +63,13 @@ button {
 
 
 #create-task-form {
-  max-width: 420px;
-  margin: 0 auto;
-  padding: 20px;
+  max-width: 32rem;
+
+  padding: 1.3rem;
   border: 1px solid #ccc;
   border-radius: 5px;
   background-color: #f9f9f9;
+  height: 25rem;
 }
 
 #create-task-form label {
@@ -83,6 +84,8 @@ button {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+  height: 1.3rem;
+  font-size: 1.05rem;
 }
 
 #create-task-form select {
@@ -91,6 +94,7 @@ button {
   margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 3px;
+
 }
 
 #create-task-form input[type="submit"] {
@@ -101,6 +105,9 @@ button {
   border-radius: 3px;
   cursor: pointer;
   transition: background-color 0.3s ease;
+  width: 102%;
+  font-size: 1.2rem;
+  height: 3.2rem;
 }
 
 #create-task-form input[type="submit"]:hover {
@@ -109,7 +116,8 @@ button {
 
 /* Optional: Add more styling to your preference */
 #desc {
-  flex-grow: 2;
+  max-width: 60%;
+  flex-grow: 3;
 }
 
 .delete-button {
@@ -122,9 +130,9 @@ button {
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 50%;
-
   width: 2rem;
   height: 2rem;
+  margin-left: 1.1rem;
 
 }
 
@@ -135,16 +143,17 @@ button {
 
 .edit-button {
   background-color: #16a085;
-  font-size: .9rem;
+  font-size: 1.2rem;
   color: white;
   border: none;
   padding: 5px 10px;
   cursor: pointer;
   transition: background-color 0.3s ease;
   border-radius: 50%;
-  margin-left: .3rem;
+  margin-left: -1.7rem;
   width: 2rem;
   height: 2rem;
+  flex-shrink: 2;
 
 }
 
@@ -165,14 +174,17 @@ button {
 /* Styles for priority classes */
 .high {
   color: #e74c3c;
+  width: 7.7rem;
 }
 
 .medium {
   color: #f39c12;
+  width: 7.7rem;
 }
 
 .low {
   color: #16a085;
+  width: 7.7rem;
 }
 
 
@@ -226,6 +238,7 @@ button {
   #list-container {
     min-width: 90%;
     max-width: 95% !important;
+    margin: 0
   }
 
   #list-container ul {
@@ -233,6 +246,10 @@ button {
     margin-top: -5px;
 
 
+  }
+
+  #desc {
+    flex-grow: 1;
   }
 
   #list-container ul li {
@@ -243,6 +260,7 @@ button {
     max-width: 100% !important;
     word-wrap: break-word;
     list-style: circle;
+    flex-shrink: ;
 
   }
 
@@ -278,14 +296,17 @@ button {
   border: 1px solid #ccc;
   border-radius: 3px;
   margin-top: 5rem;
+  font-size: 1.2rem;
 }
 
 
 
 #editBox button {
 
-  width: 10%;
+  width: 100%;
   margin: 0 auto;
+  height: 3rem;
+  font-size: 1.5rem;
 
 
 
@@ -294,5 +315,5 @@ button {
 }
 
 #editBox button:hover {
-  background-color: #04e675;
+  background-color: #00cea5;
 }
